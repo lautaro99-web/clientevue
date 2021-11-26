@@ -63,7 +63,7 @@
       <div class="mb-3">
         <label class="form-label">Dirección IP</label>
         <input
-          v-model="direccion_ip"
+          v-model="ip"
           type="text"
           class="form-control"
           placeholder="Ingrese número de IP"
@@ -112,7 +112,7 @@
             <td>{{ cliente.direccion }}</td>
             <td>{{ cliente.localidad }}</td>
             <td>{{ cliente-equipo_descripcion }}</td>
-            <td>{{ cliente.direccion_ip }}</td>
+            <td>{{ cliente.ip }}</td>
             <td>{{ cliente.sistema_operativo }}</td>
 
             <td>
@@ -148,7 +148,7 @@ export default {
       direccion: "",
       localidad: "",
       equipo_descripcion: "",
-      direccion_ip: "",
+      ip: "",
       sistema_operativo: "",
       id: null,
       lista: [],
@@ -164,7 +164,7 @@ export default {
       this.direccion = null;
       this.localidad = "";
       this.equipo_descripcion = "";
-      this.direccion_ip = null;
+      this.ip = null;
       this.sistema_operativo = "";
     },
     guardarCliente() {
@@ -175,7 +175,7 @@ export default {
         direccion: this.direccion,
         localidad: this.localidad,
         equipo_descripcion: this.equipo_descripcion,
-        direccion_ip: this.direccion_ip,
+        ip: this.ip,
         sistema_operativo: this.sistema_operativo,
       };
       this.axios.post("http://localhost:3000/cliente", unCliente).then((result) => {
@@ -203,7 +203,7 @@ export default {
       this.direccion = unCliente.direccion;
       this.localidad = unCliente.localidad;
       this.equipo_descripcion = unCliente.equipo_descripcion;
-      this.direccion_ip = unCliente.direccion_ip;
+      this.ip = unCliente.ip;
       this.sistema_operativo = unCliente.sistema_operativo;
       this.id = unCliente.id_cliente;
     },
@@ -215,7 +215,7 @@ export default {
         direccion: this.direccion,
         localidad: this.localidad,
         equipo_descripcion: this.equipo_descripcion,
-        direccion_ip: this.direccion_ip,
+        ip: this.ip,
         sistema_operativo: this.sistema_operativo,
       };
       this.axios.put("http://localhost:3000/cliente/" + this.id, clienteModificado).then((result) => {

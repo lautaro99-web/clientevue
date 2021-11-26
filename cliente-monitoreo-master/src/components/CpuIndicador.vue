@@ -4,8 +4,8 @@
   <div class="row mb-3">
     <div class="col s12 m6">
       <select @change="capturar_random()" v-model="equipo" class="form-select">
-        <option value="" selected disabled>Seleccione equipo...</option>
-        <option value="http://192.168.0.8:3000">Mi equipo</option>
+        <option value="" selected disabled>Seleccione nùmero de IP...</option>
+        <option v-for="cliente of lista_cliente" v-bind:key="cliente.id_cliente" :value="cliente.ip">Mi IP</option>
       </select>
     </div>
   </div>
@@ -95,7 +95,7 @@ export default {
       descripcion_cpu_count: "",
       valor_cpu_model: null,
       descripcion_cpu_model: "",
-      lista:  []
+      lista_cliente:  []
     };
   },
   methods: {
