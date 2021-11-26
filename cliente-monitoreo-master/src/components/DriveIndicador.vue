@@ -5,7 +5,8 @@
         <div class="col s12 m3">
             <select @change="capturar_random()" v-model="equipo" class="form-select">
                 <option value="" selected disabled>Seleccione equipo...</option>
-                <option value="http://192.168.0.8:3000">Mi equipo</option>
+                <option v-for="cliente of lista_cliente" v-bind:key="cliente.id_cliente" :value="cliente.ip">Mi IP</option>
+                
 
             </select>
         </div>
